@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2D Works — Carla Honoré</title>
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="index.html">Carla Honoré</a>
+      <nav class="site-nav__menu" aria-label="Site index">
+        <ul class="site-nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="2d.html" class="is-active">2D</a></li>
+          <li><a href="3d.html">3D</a></li>
+          <li><a href="video.html">Video</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-wrap">
+    <header class="page-header">
+      <span class="page-header__label">Flat register</span>
+      <h1>2D Works</h1>
+      <p>Grid of plates—image, description, process. Swap placeholders for <code>&lt;img&gt;</code> tags pointing to your <code>images/</code> folder.</p>
+    </header>
+
+    <!--
+      work-grid = responsive two-column card layout (see css/site.css).
+      Copy a full <article class="work-card">…</article> to add a work.
+    -->
+    <section class="work-grid">
+      <article class="work-card">
+        <span class="work-card__index" aria-hidden="true">01</span>
+        <div class="work-card__visual">Image placeholder</div>
+        <h2>Untitled (silver gelatine)</h2>
+        <p class="work-card__desc">
+          Contact prints from hand-processed negatives; the chemical edge stays inside the frame as
+          part of the image.
+        </p>
+        <p class="work-card__process">
+          <span class="work-card__process-label">Process</span>
+          Enlarger time, paper grade, and what was discarded in the darkroom—failure and salvage as
+          co-authors of the final surface.
+        </p>
+      </article>
+
+      <article class="work-card">
+        <span class="work-card__index" aria-hidden="true">02</span>
+        <div class="work-card__visual">Image placeholder</div>
+        <h2>Study — graphite and wax</h2>
+        <p class="work-card__desc">
+          Small works on paper where erasure and pressure record thinking speed rather than contour.
+        </p>
+        <p class="work-card__process">
+          <span class="work-card__process-label">Process</span>
+          Sequential sessions on one sheet; solvent lifts graphite while wax resists later layers.
+        </p>
+      </article>
+
+      <article class="work-card">
+        <span class="work-card__index" aria-hidden="true">03</span>
+        <div class="work-card__visual">Image placeholder</div>
+        <h2>Scan / ink composite</h2>
+        <p class="work-card__desc">
+          Hybrid surface between scanner bed and hand mark; color shifted after capture, not before.
+        </p>
+        <p class="work-card__process">
+          <span class="work-card__process-label">Process</span>
+          Calibration, bit depth, and when output returns to analog material—reprint, projection, re-scan.
+        </p>
+      </article>
+
+      <article class="work-card">
+        <span class="work-card__index" aria-hidden="true">04</span>
+        <div class="work-card__visual">Image placeholder</div>
+        <h2>Series note (placeholder)</h2>
+        <p class="work-card__desc">
+          Short description of the fourth work; keep one clear sentence before the process block.
+        </p>
+        <p class="work-card__process">
+          <span class="work-card__process-label">Process</span>
+          Replace with how this piece was built—materials, constraints, what changed between drafts.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Working document</p>
+  </footer>
+</body>
+</html>
