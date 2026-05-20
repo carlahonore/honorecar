@@ -3,47 +3,278 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carla Honoré</title>
-  <!-- Plain HTML + css/site.css only — no external libraries -->
-  <link rel="stylesheet" href="css/site.css" />
+  <title>Carla Honoré — Digital Media Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Required for displaying .glb 3D models -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
-<body class="page--home">
-  <header class="site-nav">
-    <div class="site-nav__inner">
-      <a class="site-nav__brand" href="index.html">Carla Honoré</a>
-      <nav class="site-nav__menu" aria-label="Site index">
-        <ul class="site-nav__links">
-          <li><a href="index.html" class="is-active">Home</a></li>
-          <li><a href="2d.html">2D</a></li>
-          <li><a href="3d.html">3D</a></li>
-          <li><a href="video.html">Video</a></li>
-        </ul>
-      </nav>
-    </div>
+
+<body>
+  <!-- ========== NAVIGATION ========== -->
+  <header class="site-header">
+    <a class="logo" href="#top">Carla Honor&eacute;</a>
+
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <!-- Home: typographic centerpiece + foreword (hover gently animates the accent bar) -->
-    <section class="home-hero">
-      <div class="home-hero__layout">
-        <div class="home-hero__accent" aria-hidden="true"></div>
-        <div class="home-hero__content">
-          <p class="home-hero__kicker">Document</p>
-          <h1 class="home-hero__title">Carla Honoré</h1>
-          <p class="home-hero__subtitle">
-            Practice moves between light and chemistry, signal and sculpture, language and noise—films
-            beside motion studies in TouchDesigner, tracks that behave like drawings, Blender volumes
-            that borrow from the darkroom, and arguments with philosophy that settle on walls and screens.
-            One slow document, written from Paris and elsewhere: how images circulate, and what they ask
-            of us when they do.
-          </p>
-        </div>
+  <main id="top">
+    <!-- ========== LANDING / HERO ========== -->
+    <section class="hero" id="home">
+      <p class="hero__label">Digital Media · Spring 2026</p>
+
+      <h1 class="hero__title">Carla Honor&eacute;</h1>
+
+      <p class="hero__course">Portfolio — Digital Media Class</p>
+
+      <p class="hero__intro">
+        I work across image, video, and interactive media. This site collects selected
+        projects from my digital media class — experiments in form, narrative, and technology.
+      </p>
+
+      <a class="hero__cta" href="#works">View works</a>
+    </section>
+
+    <!-- ========== WORKS GRID ========== -->
+    <section class="section" id="works">
+      <header class="section__header">
+        <h2>Works</h2>
+        <p>Selected class projects. Click a card to read more.</p>
+      </header>
+
+      <div class="works-grid">
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+          <button
+            type="button"
+            class="project-card__open"
+            data-title="The Dream Land"
+            data-medium="Large Format Print"
+            data-dimensions="11x15 inches"
+            data-date="February 2026"
+            data-short="I gathered all different types of mail I received and made them into one document. The source material include: coupons, Marlboro advertising, medical prescriptions, and bank letters."
+            data-tools="Scanned the documents, edited in Adobe Illustrator and Adobe Photoshop."
+            data-explore="I was trying to show the background of what it is to study in the United States, and exploring the myth of the American Dream and what it entails."
+          >
+            <img
+              class="project-card__image"
+              src="assets/images/Project-1_DreamLand.jpg"
+              alt="The Dream Land project image"
+            />
+          </button>
+
+          <div class="project-card__body">
+            <h3>The Dream Land</h3>
+            <p class="project-card__meta">Large Format Print · 2026</p>
+            <p class="project-card__desc">
+              Collaged different pieces of received mail into one printed document about studying in the United States.
+            </p>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 — THE GRAVE DIGGER WITH .GLB MODEL -->
+        <article class="project-card">
+          <button
+            type="button"
+            class="project-card__open"
+            data-title="The Grave Digger"
+            data-medium="Initially clay, then sculpted and set in an environment in Blender"
+            data-date="April 2026"
+            data-short="From a conversation between Maldoror – main character eponym of the book – and a Grave Digger in the fifth Chant. Facing the main character, the Grave Digger appeared to have reversed his position. He becomes himself the corpse he digs for, but here he tries to escape his condition of grave digger."
+            data-tools="I first sculpted the gravedigger in clay, then I used AI to generate a base model of my sculpture in 3D, that I then continued sculpting in Blender. I immersed my sculpture in a graveyard environment, and lit the scene accordingly."
+            data-explore="I wanted to see my initial sculpture in an environment that corresponded to the image I had in mind, and to work around the image further by turning it into an animated sequence."
+            data-model="assets/models/Project-2_TheGravedigger.glb"
+            data-poster="assets/images/Project-2_TheGraveDigger.png"
+          >
+            <img
+              class="project-card__image"
+              src="assets/images/Project-2_TheGraveDigger.png"
+              alt="The Grave Digger project image"
+            />
+          </button>
+
+          <div class="project-card__body">
+            <h3>The Grave Digger</h3>
+            <p class="project-card__meta">Clay / 3D · Blender · 2026</p>
+            <p class="project-card__desc">
+              A sculpture turned 3D scene exploring the Grave Digger's reversed position and condition.
+            </p>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 PLACEHOLDER -->
+        <article class="project-card">
+          <button
+            type="button"
+            class="project-card__open"
+            data-title="Project Title Three"
+            data-medium="Video · Adobe Premiere"
+            data-date="2026"
+            data-short="Replace this with a short description of the video project."
+            data-tools="Replace this with the tools and process used to make the video."
+            data-explore="Replace this with what you were trying to explore."
+            data-video="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          >
+            <img
+              class="project-card__image"
+              src="assets/images/project-3-placeholder.jpg"
+              alt="Project three image"
+            />
+          </button>
+
+          <div class="project-card__body">
+            <h3>Project Title Three</h3>
+            <p class="project-card__meta">Video · 2026</p>
+            <p class="project-card__desc">
+              Replace this with a short description of the third project.
+            </p>
+          </div>
+        </article>
       </div>
+    </section>
+
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+      <header class="section__header">
+        <h2>Contact</h2>
+      </header>
+
+      <ul class="contact-list">
+        <li>
+          <span class="contact-list__label">Email</span>
+          <a href="mailto:carlahonore@proton.me">carlahonore@proton.me</a>
+        </li>
+        <li>
+          <span class="contact-list__label">GitHub</span>
+          <a href="https://github.com/carlahonore" target="_blank" rel="noopener noreferrer">github.com/carlahonore</a>
+        </li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Working document</p>
-  </footer>
+  <!-- ========== PROJECT MODAL / LIGHTBOX ========== -->
+  <div class="project-modal" id="project-modal" hidden>
+    <div class="project-modal__overlay" data-close-modal></div>
+
+    <div class="project-modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="project-modal__close" type="button" data-close-modal>
+        Close
+      </button>
+
+      <div id="modal-media"></div>
+
+      <h2 id="modal-title"></h2>
+      <p id="modal-meta"></p>
+      <p id="modal-short"></p>
+
+      <h3>Process</h3>
+      <p id="modal-tools"></p>
+
+      <h3>Exploration</h3>
+      <p id="modal-explore"></p>
+    </div>
+  </div>
+
+  <!-- ========== MODAL SCRIPT ========== -->
+  <script>
+    const projectButtons = document.querySelectorAll(".project-card__open");
+    const modal = document.querySelector("#project-modal");
+
+    const modalMedia = document.querySelector("#modal-media");
+    const modalTitle = document.querySelector("#modal-title");
+    const modalMeta = document.querySelector("#modal-meta");
+    const modalShort = document.querySelector("#modal-short");
+    const modalTools = document.querySelector("#modal-tools");
+    const modalExplore = document.querySelector("#modal-explore");
+
+    const closeModalButtons = document.querySelectorAll("[data-close-modal]");
+
+    projectButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const title = button.dataset.title || "";
+        const medium = button.dataset.medium || "";
+        const date = button.dataset.date || button.dataset.year || "";
+        const dimensions = button.dataset.dimensions || "";
+        const short = button.dataset.short || button.dataset.description || "";
+        const tools = button.dataset.tools || "";
+        const explore = button.dataset.explore || "";
+        const model = button.dataset.model || "";
+        const poster = button.dataset.poster || "";
+        const video = button.dataset.video || "";
+
+        modalTitle.textContent = title;
+
+        const metaParts = [medium, dimensions, date].filter(Boolean);
+        modalMeta.textContent = metaParts.join(" · ");
+
+        modalShort.textContent = short;
+        modalTools.textContent = tools;
+        modalExplore.textContent = explore;
+
+        modalMedia.innerHTML = "";
+
+        if (model) {
+          modalMedia.innerHTML = `
+            <model-viewer
+              src="${model}"
+              poster="${poster}"
+              alt="Interactive 3D model of ${title}"
+              camera-controls
+              auto-rotate
+              shadow-intensity="1"
+              exposure="1"
+              style="width: 100%; height: 500px; background: #111; border-radius: 12px;">
+            </model-viewer>
+          `;
+        } else if (video && !video.includes("VIDEO_ID_HERE")) {
+          modalMedia.innerHTML = `
+            <iframe
+              src="${video}"
+              title="${title}"
+              allowfullscreen
+              style="width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px;">
+            </iframe>
+          `;
+        } else {
+          const image = button.querySelector("img");
+
+          if (image) {
+            modalMedia.innerHTML = `
+              <img
+                src="${image.getAttribute("src")}"
+                alt="${image.getAttribute("alt")}"
+                style="width: 100%; border-radius: 12px;"
+              />
+            `;
+          }
+        }
+
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    closeModalButtons.forEach((button) => {
+      button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.hidden) {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+      modal.hidden = true;
+      modalMedia.innerHTML = "";
+      document.body.style.overflow = "";
+    }
+  </script>
 </body>
 </html>

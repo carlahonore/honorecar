@@ -1,0 +1,492 @@
+/*
+  ============================================
+  DIGITAL MEDIA PORTFOLIO — style.css
+  ============================================
+  How to customize:
+  1. Change colors in the :root section below.
+  2. Edit index.html for your text and image paths.
+  3. Put your images in assets/images/
+  ============================================
+*/
+
+/* --- Colors & spacing (edit these first) --- */
+:root {
+  --bg: #1e1b18;                  /* Slightly brighter, warm charcoal-brown */
+  --bg-card: #292420;             /* Lighter, warmer card color */
+  --bg-card-hover: #332d28;       /* Lighter hover state */
+  --text: #f3ede2;                /* Brighter off-white */
+  --text-soft: #c8beaf;           /* Lighter body text */
+  --text-muted: #948a7b;          /* Lighter helper text */
+  --accent: #dba975;              /* More luminous gold accent */
+  --accent-soft: rgba(219, 169, 117, 0.28);
+  --border: rgba(243, 237, 226, 0.12);
+  --max-width: 1000px;
+  --space: 1.25rem;
+  --space-lg: 3rem;
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+
+/* --- Reset & base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  /* Enhanced warm glow at the top for a brighter, more ambient feel */
+  background-image: radial-gradient(
+    ellipse 85% 45% at 50% -10%,
+    rgba(219, 169, 117, 0.16),
+    transparent 65%
+  );
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+/* --- Header / navigation --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+  padding: var(--space) 1.5rem;
+  background: rgba(20, 18, 16, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* --- Hero / landing --- */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.hero__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 8vw, 3.75rem);
+  font-weight: 400;
+  margin: 0;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.hero__course {
+  margin: 0.75rem 0 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+
+.hero__intro {
+  max-width: 32rem;
+  margin: 1.75rem auto 0;
+  color: var(--text-soft);
+}
+
+.hero__cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.65em 1.4em;
+  border: 1px solid var(--accent-soft);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.hero__cta:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+/* --- Sections --- */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.section__header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0;
+  color: var(--text);
+}
+
+.section__header p {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- Works grid --- */
+.works-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .works-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-soft);
+}
+
+/* Button wraps only the image (click to open modal) */
+.project-card__open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #2a2520;
+  /* If image file is missing, gray box still shows */
+}
+
+.project-card__body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.project-card__body h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.project-card__meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.project-card__desc {
+  margin: 0.6rem 0 0;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* --- About --- */
+.about__content {
+  max-width: 38rem;
+  margin-top: 1.5rem;
+}
+
+.about__content p {
+  color: var(--text-soft);
+}
+
+.about__content p + p {
+  margin-top: 1rem;
+}
+
+/* --- Contact --- */
+.contact-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.contact-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list__label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.contact-list a {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* --- Modal (project detail popup) --- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 5, 0.88);
+  cursor: pointer;
+}
+
+.modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 860px) {
+  .modal__panel {
+    grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+    align-items: start;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: none;
+  background: none;
+  color: var(--text-soft);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.modal__close:hover {
+  color: var(--text);
+}
+
+.modal__media img,
+.modal__media iframe {
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+.modal__media iframe {
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+}
+
+.modal__text {
+  margin-top: 1rem;
+}
+
+.modal__text h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.modal__meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.modal__description {
+  margin: 0.75rem 0 0;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.modal__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Accessibility: respect reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .modal,
+  .project-card,
+  .hero__cta {
+    transition: none;
+  }
+}
+/* ========== PROJECT MODAL / LIGHTBOX ========== */
+
+.project-modal[hidden] {
+  display: none;
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.project-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.project-modal__content {
+  position: relative;
+  z-index: 1;
+  width: min(900px, calc(100% - 2rem));
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  margin: 1rem auto;
+  padding: 2rem;
+  background: #111;
+  color: #f2f2f2;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
+
+.project-modal__close {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+#modal-media {
+  margin-bottom: 1.5rem;
+}
+
+model-viewer {
+  display: block;
+  width: 100%;
+  height: 500px;
+}
